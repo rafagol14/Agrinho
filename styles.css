@@ -1,0 +1,863 @@
+/* ============================================
+   TecnoAgro Sustentável - Estilos Globais
+   Design: Futurista Minimalista
+   Paleta: Verde Profundo + Azul-Aço + Branco
+   ============================================ */
+
+/* Importar Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Reset e Variáveis */
+:root {
+    --primary: #1a5f3f;
+    --primary-dark: #0f4c2f;
+    --accent-green: #4ade80;
+    --accent-blue: #0ea5e9;
+    --accent-cyan: #06b6d4;
+    --bg-white: #ffffff;
+    --bg-light: #f9fafb;
+    --bg-green-light: #f0f9f6;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --text-light: #d1d5db;
+    --border-light: #e5e7eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, #16a34a, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.logo-section h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.nav-menu {
+    display: none;
+    gap: 2rem;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex;
+    }
+}
+
+.nav-menu a {
+    color: var(--text-gray);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.credits {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.credits-label {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.credits-name {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.125rem;
+}
+
+.credits-school {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    margin-bottom: 0.125rem;
+}
+
+.credits-contest {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .credits {
+        display: none;
+    }
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-text {
+    max-width: 40rem;
+    animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(74, 222, 128, 0.2);
+    border: 1px solid rgba(74, 222, 128, 0.5);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.hero-badge span {
+    color: #16a34a;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.hero-text h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    color: #f3f4f6;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 28rem;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.75rem 2rem;
+}
+
+.btn-primary:hover {
+    background-color: #15803d;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-light {
+    background-color: white;
+    color: var(--primary);
+    padding: 0.75rem 2rem;
+}
+
+.btn-light:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Section Headers
+   ============================================ */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Inovações Tecnológicas
+   ============================================ */
+
+.inovacoes {
+    padding: 5rem 0;
+    background-color: var(--bg-white);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--accent-green);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.benefits {
+    list-style: none;
+}
+
+.benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.benefits li::before {
+    content: '●';
+    color: var(--accent-green);
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+/* ============================================
+   Bioinsumos
+   ============================================ */
+
+.bioinsumos {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f9fafb, #f0f9f6);
+}
+
+.bioinsumos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.bio-card {
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.bio-card:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-md);
+}
+
+.bio-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bio-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.bio-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.bio-benefit {
+    padding: 0.75rem;
+    background-color: #f0fdf4;
+    border: 1px solid #dcfce7;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #166534;
+}
+
+/* ============================================
+   Charts
+   ============================================ */
+
+.chart-container {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    margin-top: 3rem;
+}
+
+.chart-container h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.chart-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f0fdf4;
+    border: 1px solid #dcfce7;
+    border-radius: 0.5rem;
+    color: var(--text-gray);
+    text-align: center;
+}
+
+.chart-info strong {
+    color: var(--primary);
+}
+
+/* ============================================
+   Tabs
+   ============================================ */
+
+.tabs {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid var(--border-light);
+    background-color: #f9fafb;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background-color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tab-content h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   Impacto Ambiental
+   ============================================ */
+
+.impacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .impacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.impacto-chart {
+    display: flex;
+    justify-content: center;
+}
+
+.pie-chart {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.impacto-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.impacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-light);
+}
+
+.impacto-item.green {
+    background: linear-gradient(135deg, #f0fdf4, #f0fdf4);
+    border-color: #dcfce7;
+}
+
+.impacto-item.blue {
+    background: linear-gradient(135deg, #f0f9ff, #f0f9ff);
+    border-color: #e0f2fe;
+}
+
+.impacto-item.emerald {
+    background: linear-gradient(135deg, #f0fdf4, #f0fdf4);
+    border-color: #dcfce7;
+}
+
+.impacto-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.impacto-item.green .impacto-dot {
+    background-color: var(--primary);
+}
+
+.impacto-item.blue .impacto-dot {
+    background-color: var(--accent-blue);
+}
+
+.impacto-item.emerald .impacto-dot {
+    background-color: var(--accent-green);
+}
+
+.impacto-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.impacto-desc {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+
+.cta {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    color: #e0f2fe;
+    font-size: 1.125rem;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background-color: #111827;
+    color: #d1d5db;
+    padding: 3rem 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-green);
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.875rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bioinsumos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 0.625rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .bioinsumos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tabs-header {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        border-bottom: none;
+        border-right: 3px solid transparent;
+    }
+
+    .tab-btn.active {
+        border-right-color: var(--primary);
+        border-bottom: none;
+    }
+}
+
+/* ============================================
+   Animações de Scroll
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    .bio-card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
